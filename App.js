@@ -1,6 +1,9 @@
 import React from 'react';
-import AppNavigator from './src/navigation/Navigator';
+import RetiroPantalla from './src/screens/RetiroPantalla';
+
+
+
 
 export default function App() {
-  return <AppNavigator />;
+  return <RetiroPantalla />;
 }

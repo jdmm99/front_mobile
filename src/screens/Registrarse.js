@@ -6,7 +6,7 @@ const Registrarse = () => {
   const [telefono, setTelefono] = useState('');
   const [email, setEmail] = useState('');
   const [tipoCuenta, settipoCuenta] = useState('Ahorro')
-  const [saldo, setSaldo] = useState(0.00)
+  const [saldo, setSaldo] = useState('')
   const [contrasena, setContrasena] = useState('');
   const [mostrarContrasena, setMostrarContrasena] = useState(false);
   const navigation = useNavigation();
