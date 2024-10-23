@@ -2,8 +2,8 @@ import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { Image, StyleSheet, Text, TouchableOpacity, View, } from 'react-native';
 
-const PantallaBienvenida = () => {
-const navigation = useNavigation();
+const PantallaBienvenida = ({ navigation}) => {
+
 
   return (
     <View style={styles.container}>

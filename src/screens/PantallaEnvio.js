@@ -6,20 +6,21 @@ const CommonHeader = ({ onBack }) => (
     <TouchableOpacity onPress={onBack} style={styles.backButton}>
       <Text style={styles.backText}>←</Text>
     </TouchableOpacity>
-    <Text style={styles.headerTitle}>Retirar Dinero</Text>
+    <Text style={styles.headerTitle}>Enviar Dinero</Text>
   </View>
 );
 
-const RetiroPantalla = ({ navigation }) => {
+const EnvioPantalla = ({ navigation }) => {
   const [monto, setMonto] = useState('');
-  const [cuentabancaria, setCuentabancaria] = useState('');
+  const [receptor, setReceptor] = useState('');
+  const [nota, setNota] = useState('');
 
   return (
     <View style={styles.container}>
-      <CommonHeader title="Withdraw" onBack={() => navigation.goBack()} />
+      <CommonHeader title="Send Money" onBack={() => navigation.goBack()} />
       
       <View style={styles.content}>
-        {/* Ingresar Monto */}
+
         <View style={styles.amountContainer}>
           <Text style={styles.currencySymbol}>$</Text>
           <TextInput
@@ -32,37 +33,45 @@ const RetiroPantalla = ({ navigation }) => {
           />
         </View>
 
-        {/* Bank Account Selector */}
+        {/* Recipient Input */}
         <View style={styles.inputContainer}>
-          <Text style={styles.label}>A cuenta bancaria</Text>
-          <TouchableOpacity 
-            style={styles.bankSelector}
-            onPress={() => {
-              // Abrir selector de cuenta bancaria
-              console.log('Select bank account');
-            }}
-          >
-            <Text style={styles.bankSelectorText}>
-              {cuentabancaria || 'Selecciona Cuenta Bancaria'}
-            </Text>
-            <Text>→</Text>
-          </TouchableOpacity>
+          <Text style={styles.label}>Para</Text>
+          <TextInput
+            style={styles.input}
+            value={receptor}
+            onChangeText={setReceptor}
+            placeholder="Número de cuenta"
+            placeholderTextColor="#999999"
+          />
+        </View>
+
+        {/* Note Input */}
+        <View style={styles.inputContainer}>
+          <Text style={styles.label}>Nota</Text>
+          <TextInput
+            style={styles.input}
+            value={nota}
+            onChangeText={setNota}
+            placeholder="Deje un breve mensaje"
+            placeholderTextColor="#999999"
+          />
         </View>
 
         <TouchableOpacity 
-          style={[styles.button, (!monto || !cuentabancaria) && styles.buttonDisabled]}
-          disabled={!monto || !cuentabancaria}
+          style={[styles.button, (!monto || !receptor) && styles.buttonDisabled]}
+          disabled={!monto || !receptor}
           onPress={() => {
-            // Lógica para retirar dinero
-            console.log('Withdrawing money...');
+            // Lógica para enviar dinero
+            console.log('Sending money...');
           }}
         >
-          <Text style={styles.buttonText}>Retirar</Text>
+          <Text style={styles.buttonText}>Enviar Dinero</Text>
         </TouchableOpacity>
       </View>
     </View>
   );
 };
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -180,4 +189,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default RetiroPantalla;
+export default EnvioPantalla;
