@@ -20,7 +20,7 @@ const EnvioPantalla = ({ navigation }) => {
       <CommonHeader title="Send Money" onBack={() => navigation.goBack()} />
       
       <View style={styles.content}>
-        {/* Amount Input */}
+
         <View style={styles.amountContainer}>
           <Text style={styles.currencySymbol}>$</Text>
           <TextInput
@@ -71,6 +71,7 @@ const EnvioPantalla = ({ navigation }) => {
     </View>
   );
 };
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,

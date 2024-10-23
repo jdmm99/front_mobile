@@ -1,7 +1,8 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { useState } from 'react';
 import { Picker, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
-const Registrarse = () => {
+
+const PantallaRegistrarse = ({ navigation }) => {
   const [nombre, setNombre] = useState('');
   const [telefono, setTelefono] = useState('');
   const [email, setEmail] = useState('');
@@ -9,7 +10,6 @@ const Registrarse = () => {
   const [saldo, setSaldo] = useState('')
   const [contrasena, setContrasena] = useState('');
   const [mostrarContrasena, setMostrarContrasena] = useState(false);
-  const navigation = useNavigation();
   const handleGoBack = () => {
     navigation.goBack(); 
   }
@@ -167,4 +167,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Registrarse;
+export default PantallaRegistrarse;
