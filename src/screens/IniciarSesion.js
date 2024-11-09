@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native';
 import React, { useState } from 'react';
 import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View, } from 'react-native';
 
@@ -21,7 +22,7 @@ const IniciarSesion = ({ navigation }) => {
 
       {/* Formulario */}
       <View style={styles.form}>
-        {/* Campo de teléfono */}
+
         <Text style={styles.label}>Teléfono</Text>
         <View style={styles.phoneInputContainer}>
           <Image 
@@ -71,13 +72,15 @@ const IniciarSesion = ({ navigation }) => {
             styles.signInButton,
             (!phoneNumber || !password) && styles.signInButtonDisabled
           ]}
-          onPress={() => {
-            if (phoneNumber && password) {
+          onPress={() => { navigation.navigate("Dashboard")
+           // if (phoneNumber && password) {
               // Aquí iría la lógica de inicio de sesión
-              console.log('Sign in pressed');
+             
+          // console.log('Sign in pressed');
             }
-          }}
-          disabled={!phoneNumber || !password}
+          }
+        //}
+
         >
           <Text style={styles.signInButtonText}>Iniciar Sesión</Text>
         </TouchableOpacity>

@@ -6,15 +6,15 @@ const DashboardScreen = ({ navigation }) => {
   const [showLogoutModal, setShowLogoutModal] = useState(false);
 
   const mainActions = [
-    { icon: 'send', label: 'Enviar', onPress: () => console.log('Enviar') },
-    { icon: 'bank-transfer-in', label: 'Depositar', onPress: () => console.log('Depositar') },
-    { icon: 'bank-transfer-out', label: 'Retirar', onPress: () => console.log('Retirar') },
-    { icon: 'history', label: 'Movimientos', onPress: () => console.log('Movimientos') },
+    { icon: 'send', label: 'Enviar', onPress: () => navigation.navigate('Envio') },
+    { icon: 'bank-transfer-in', label: 'Depositar', onPress: () => navigation.navigate('Deposito') },
+    { icon: 'bank-transfer-out', label: 'Retirar', onPress: () => navigation.navigate('Retiro') },
+    { icon: 'history', label: 'Movimientos', onPress: () => navigation.navigate('Historial') },
   ];
 
   const additionalServices = [
-    { icon: 'cash-plus', label: 'Solicitar Préstamo', onPress: () => console.log('Préstamo') },
-    { icon: 'file-chart', label: 'Reporte Financiero', onPress: () => console.log('Reporte') },
+    { icon: 'cash-plus', label: 'Solicitar Préstamo', onPress: () => navigation.navigate('Prestamo') },
+    { icon: 'file-chart', label: 'Reporte Financiero', onPress: () => navigation.navigate('Reporte') }, //
   ];
 
   const ActionButton = ({ icon, label, onPress }) => (

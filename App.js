@@ -8,11 +8,12 @@ import PantallaRegistrarse from './src/screens/PantallaRegistrarse';
 import PantallaDeposito from './src/screens/PantallaDeposito';
 import PantallaHistorial from './src/screens/PantallaHistorial';
 import PantallaPrestamo from './src/screens/PantallaPrestamo';
+import Navigation from './src/navigation/Navigator';
 
 
 
 
 
 export default function App() {
-  return <PantallaPrestamo/>;
+  return <Navigation/>;
 }
