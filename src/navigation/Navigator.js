@@ -1,3 +1,4 @@
+
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import IniciarSesion from '../screens/IniciarSesion';
@@ -32,10 +33,12 @@ const AppNavigator = () => {
   );
 };
 
-export default function Navigation(){
+export default function AppNavigator(){
   return(
 
       <AppNavigator />
 
   )
 };
+
+
